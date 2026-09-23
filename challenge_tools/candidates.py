@@ -47,3 +47,16 @@ def average_score(scores):
         return 0.0
 
     return sum(scores) / len(scores)
+
+def rank_teams(entries):
+    return sorted(entries, key=lambda item: (-item[1], item[0].casefold()))
+
+def rotate_left(items, steps):
+    copied = list(items)
+
+    if len(copied) == 0:
+        return copied
+
+    steps = steps % len(copied)
+
+    return copied[steps:] + copied[:steps]
