@@ -2,7 +2,12 @@
 
 Revisa su comportamiento según los requisitos de la actividad.
 """
+import sys
 
+
+def verify_python_version():
+    """Devuelve True cuando Python es 3.10 o mas."""
+    return sys.version_info >= (3, 10)
 
 def normalize_answer(answer):
     """Normaliza una respuesta para compararla sin distinguir mayúsculas."""
