@@ -23,7 +23,7 @@ def rotate_left(items, steps):
 
 def round_score_to_ten(score):
     """Redondea una puntuación no negativa a la decena más cercana."""
-    return round(score / 10) * 10
+    return ((score + 5) // 10) * 10
 
 
 def rank_teams(entries):
@@ -37,5 +37,7 @@ def unique_tags(tags):
 
 
 def average_score(scores):
-    """Devuelve la media aritmética de las puntuaciones."""
+    if len(scores) == 0:
+        return 0.0
+
     return sum(scores) / len(scores)
